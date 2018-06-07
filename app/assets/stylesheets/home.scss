@@ -1,3 +1,39 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#body {
+
+}
+
+#upperHeaderArea {
+  background-color: #AAFF94;
+  height: 80px;
+  width: 100%;
+  overflow:auto;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+#lowerHeaderArea {
+  background-color: #AAFF94;
+  height: 35px;
+  width: 100%;
+  overflow:auto;
+}
+
+#upperHeaderLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-left: 30px;
+  margin-top: -9px;
+  display: inline-block;
+}
+
+#riceHouseSign {
+  font-size: 30px;
+  font-family: Proxima Nova Soft, Helvetica Neue, sans-serif;
+  color: #FFFFFF;
+  display: inline-block;
+  margin-top: 15px;
+}

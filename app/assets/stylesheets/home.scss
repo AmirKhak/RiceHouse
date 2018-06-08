@@ -11,10 +11,14 @@
 
 .homeBody {
   @include divResponsiveWidth;
-  height: 900px;
   background-color: WHITE;
   margin: auto;
   margin-bottom: 20px;
+}
+
+#home_body {
+  @extend .homeBody;
+  height: 900px;
 }
 
 @mixin stationaryImage {
@@ -58,4 +62,27 @@
   margin-left: 25px;
   margin-top: 145px;
   display: inline-block;
+}
+
+#contact_us_body {
+  @extend .homeBody;
+  height: 500px;
+}
+
+#about_us_body {
+  @extend .homeBody;
+  height: 550px;
+}
+
+#contact_us_image {
+  height: 381px;
+  width: inherit;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+#about_us_image {
+  height: 400px;
+  width: inherit;
 }

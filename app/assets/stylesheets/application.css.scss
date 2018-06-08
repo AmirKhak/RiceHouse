@@ -6,3 +6,45 @@
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#mainBody {
+  background-image: url('terracedfarm.jpg');
+  background-size: contain;
+}
+
+#upperHeaderArea {
+  background-color: #AAFF94;
+  height: 80px;
+  width: 100%;
+  overflow: hidden;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+#lowerHeaderArea {
+  background-color: #AAFF94;
+  height: 35px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#upperHeaderLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-top: -9px;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+#riceHouseSign {
+  font-size: 25px;
+  font-family: Proxima Nova Soft, Helvetica Neue, sans-serif;
+  color: #FFFFFF;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.navbarItem {
+  color: #FFFFFF;
+  background-color: inherit;
+}

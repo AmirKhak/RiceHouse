@@ -10,10 +10,37 @@
 }
 
 .homeBody {
-  @include divResponsiveWidth;
   background-color: WHITE;
   margin: auto;
   margin-bottom: 20px;
+  @include divResponsiveWidth;
+}
+
+@mixin authenticationForms {
+  width: 225px;
+  border-radius: 5%;
+  text-align: center;
+  color: #3E882A;
+  background-color: WHITE;
+  margin: auto;
+  padding-top: 6px;
+  margin-bottom: 20px;
+}
+
+#userChangePasswordBody {
+  @include authenticationForms;
+  height: 530px;
+  width: 250px;
+}
+
+#userSignUpBody {
+  @include authenticationForms;
+  height: 285px;
+}
+
+#userSignInBody {
+  @include authenticationForms;
+  height: 300px;
 }
 
 #home_body {
@@ -85,4 +112,9 @@
 #about_us_image {
   height: 400px;
   width: inherit;
+}
+
+#sign_up_page {
+  @extend .homeBody;
+  height: 400px;
 }

@@ -4,6 +4,19 @@
     <!-- <%= image_tag("ricefarm.jpg", class: "header") %> -->
     <%= image_tag("riceLogo.jpg", id: "upperHeaderLogo") %>
     <p id="riceHouseSign">RiceHouse</p>
+    <% if current_user %>
+      <div id="userLogoDropdown">
+        <%= image_tag("userlogo.jpg", id: "userLogo") %>
+        <div id="options">
+          <%= link_to "Change Password", edit_user_registration_path %>
+          <%= link_to "Sign Out",destroy_user_session_path, :method => :delete %>
+        </div>
+      </div>
+    <% else %>
+      <div id="userSignIn">
+        <%= link_to "Sign In",new_user_session_path %>
+      </div>
+    <% end %>
   </div>
 
   <nav id="lowerHeaderArea" class="navbar navbar-default">

@@ -23,6 +23,11 @@
     <div class="container-fluid">
       <ul class="nav navbar-nav">
         <li class="navbarItem"><a href="/home">Home</a></li>
+        <% if user_signed_in? %>
+         <% if current_user.admin %>
+           <li class="navbarItem"><a href="/user">Users</a></li>
+         <% end %>
+        <% end %>
         <li class="navbarItem"><a href="/products">Products</a></li>
         <li class="navbarItem"><a href="/about_us">About Us</a></li>
         <li class="navbarItem"><a href="/contact_us">Contact Us</a></li>

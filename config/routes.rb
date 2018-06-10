@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/products', to: 'home#products'
   get '/about_us', to: 'home#about_us'
   get '/contact_us', to: 'home#contact_us'
-    
+  resources :user, only: [:index, :destroy, :edit]
+  get '/user/:id', to: 'user#destroy'
 
 end

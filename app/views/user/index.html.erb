@@ -1,0 +1,28 @@
+<% if current_user %>
+  <div id="user_page">
+    <% @users.each do |user| %>
+    <div id="user_info">
+      <div id="user_email">
+        <p id="info_text"><%= user.email %></p>
+      </div>
+      <div id="user_admin">
+        <% if user.admin %>
+          <p id="info_text">Admin</p>
+        <% else %>
+          <p id="info_text">Not Admin</p>
+        <% end %>
+      </div>
+      <button id="user_make_admin">
+        <% if user.admin %>
+          <%= link_to 'Drop Admin', edit_user_path(user.id) %>
+        <% else %>
+          <%= link_to 'Make Admin', edit_user_path(user.id) %>
+        <% end %>
+      </button>
+      <button id="user_remove">
+        <%= link_to 'Remove', user_path(user.id) %>
+      </button>
+    </div>
+    <% end %>
+  </div>
+<% end %>

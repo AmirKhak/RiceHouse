@@ -1,0 +1,87 @@
+// Place all the styles related to the User controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+@mixin user_sub_info {
+  display: inline-block;
+  float: left;
+  height: 30px;
+  margin-top: 2px;
+  margin-left: 10px;
+}
+
+@mixin sub_info_button {
+  display: inline-block;
+  float: right;
+  height: 24px;
+  border: 2px solid WHITE;
+  background-color: inherit;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+#user_page {
+  margin-bottom: 20px;
+  margin: auto;
+  width: 700px;
+  padding: 30px;
+}
+
+#user_info {
+  background-color: inherit;
+  display: block;
+  color: WHITE;
+  width: 640px;
+  height: 34px;
+  border: 2px solid WHITE;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+
+#user_email {
+  @include user_sub_info;
+  width: 280px;
+}
+
+#user_admin {
+  @include user_sub_info;
+  width: 80px;
+  text-align: center;
+}
+
+#info_text {
+  margin-top: 3px;
+}
+
+#user_page #user_admin #user_email :hover {
+  color: BLACK;
+}
+
+#user_make_admin {
+  @include sub_info_button;
+  width: 150px;
+}
+
+#user_remove {
+  @include sub_info_button;
+  width: 80px;
+}
+
+#user_make_admin a {
+  color: WHITE;
+}
+
+#user_remove a {
+  color: WHITE;
+}
+
+#user_remove a:hover {
+  color: BLACK;
+}
+
+#user_make_admin a:hover {
+  color: BLACK;
+}

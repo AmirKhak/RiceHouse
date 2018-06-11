@@ -10,18 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180610120847) do
+ActiveRecord::Schema.define(version: 20180611144419) do
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string "title", limit: 60, null: false
     t.text "description", null: false
-    t.bigint "rate"
+    t.float "rate", limit: 24
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
     t.string "avatar_content_type"
     t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer "totalRates"
+    t.decimal "price", precision: 10
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

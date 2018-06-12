@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   get '/user/:id', to: 'user#destroy'
 
-  resources :product, only: [:index, :create, :show, :destroy, :new, :edit]
+  resources :product, only: [:index, :create, :show, :destroy, :new, :edit, :update]
 
   get '/product/:id', to: 'product#destroy'
   get '/product', to: 'product#create'

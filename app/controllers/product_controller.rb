@@ -23,8 +23,19 @@ class ProductController < ApplicationController
   def edit
     if user_signed_in?
       if current_user.admin
-
+        @product = Product.find(params[:id]);
       end
+    end
+  end
+
+  def update
+    @product = Product.find(params[:id]);
+    if @product.update(product_params)
+      flash[:notice] = "Successfully editted new product!"
+      redirect_to product_index_path
+    else
+      flash[:alert] = "Error editing new product!"
+      render :edit
     end
   end
 
@@ -42,7 +53,7 @@ class ProductController < ApplicationController
   private
 
   def product_params
-   params.require(:product).permit(:avatar, :rate, :description, :title)
+   params.require(:product).permit(:avatar, :rate, :description, :title, :price)
   end
 
 end

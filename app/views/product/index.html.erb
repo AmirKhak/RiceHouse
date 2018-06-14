@@ -1,49 +1,62 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="products_page">
-  <botton id="new_botton">
-    <%= link_to "Add Product", new_product_path %>
-  </botton>
+  <% if @admin %>
+    <botton id="new_botton">
+      <%= link_to "Add Product", new_product_path %>
+    </botton>
+  <% end %>
   <% @products.each do |product| %>
     <div id="product">
       <%= image_tag(product.avatar, id: "product_avatar") %>
-      <div id="product_price">
-        <%= product.price %><p>£</p>
-      </div>
-      <div id="product_rate">
-        <% if product.totalRates.nil? %>
-          <p>No Rates Yet<p>
-        <% else %>
-          <% rate = (product.rate).round; %>
-          <% (0..(rate - 1)).each do |i| %>
-            <span class="fa fa-star checked"></span>
+      <div id="product_price_rate">
+        <div id="product_price">
+          <% if product.price == 0 %>
+            <p>Free</p>
+          <% else %>
+            <p><%= product.price %>£</p>
           <% end %>
-          <% (rate..4).each do |i| %>
-            <span class="fa fa-star"></span>
+        </div>
+        <div id="product_rate">
+          <% if product.totalRates == 0 %>
+            <p>No Rates Yet<p>
+          <% else %>
+            <% rate = (product.rate).round; %>
+            <% (0..(rate - 1)).each do |i| %>
+              <span class="fa fa-star checked"></span>
+            <% end %>
+            <% (rate..4).each do |i| %>
+              <span class="fa fa-star"></span>
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
       </div>
-      <p><%= product.title %><p>
-      <botton id="product_botton">
-        <%= link_to "More", edit_product_path(product.id) %>
-      </botton>
-      <botton id="product_botton" data-toggle="modal" data-target="#buyModal">
-        <a href="">Buy</a>
-      </botton>
+      <div id="product_title">
+        <p><%= product.title %><p>
+      </div>
+      <div id="product_bottons">
+        <botton id="product_botton">
+          <%= link_to "More", product_path(product.id) %>
+        </botton>
+        <botton id="product_botton" data-toggle="modal" data-target="#buyModal">
+          <a>Buy</a>
+        </botton>
+      </div>
 
-      <div class="modal fade" id="buyModal" role="dialog">
+      <div class="modal" id="buyModal" role="dialog">
         <div class="modal-dialog">
 
           <!-- Modal content-->
-          <div class="modal-content">
+          <div id="buyingModal" class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
               <h4 class="modal-title">We Are Sorry!</h4>
             </div>
             <div class="modal-body">
-              <p>You should sign in first.</p>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <% if user_signed_in? %>
+                <p>Buying system is still not available.</p>
+              <% else %>
+                <p>You should sign in first.</p>
+              <% end %>
             </div>
           </div>
 

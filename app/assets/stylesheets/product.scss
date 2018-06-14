@@ -3,13 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #products_page {
-  width: 80%;
-  margin: auto;
-}
-
-@keyframes product_shadow {
-    from  {box-shadow: 0px 0px 0px 0px BLACK;}
-    to {box-shadow: 5px 5px 5px 5px BLACK;}
+  width: 90%;
+  margin: 0% 5%;
 }
 
 .checked {
@@ -17,7 +12,7 @@
 }
 
 #product {
-  width: 225px;
+  width: 23%;
   height: 225px;
   background-color: WHITE;
   text-align: center;
@@ -26,6 +21,7 @@
   margin-right: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+  font-size: 1em;
 }
 
 #new_botton {
@@ -48,35 +44,60 @@
 }
 
 #new_page {
-  height: 200px;
-  width: 300px;
+  height: 400px;
+  width: 360px;
   margin: auto;
   margin-bottom: 20px;
-  display: inline-block;
+  display: inherit;
   color: #3E882A;
   background-color: WHITE;
+  border-radius: 5px;
+}
+
+#new_form {
+  height: 400px;
+  width: 300px;
   text-align: center;
+  margin: auto;
 }
 
 #product_avatar {
-  width: inherit;
+  width: 100%;
   height: 70%;
   display: inline-block;
   margin: auto;
 }
 
-#product p {
+#product_title {
   margin: auto;
   display: block;
+  height: 20px;
+  width: 100%;
+}
+
+#product_price_rate {
+  width: 100%;
+  height: 20px;
 }
 
 #product_botton {
-  width: 100px;
+  width: 40%;
   display: inline-block;
   height: 20px;
   border-radius: 5px;
   background: #52A125;
   margin: auto;
+}
+
+#product_bottons {
+  width: 100%;
+  display: block;
+  height: 20px;
+  text-align: center;
+}
+
+#product_botton p {
+  color: WHITE;
 }
 
 #product_botton a {
@@ -88,16 +109,211 @@
 }
 
 #product_price {
-  width: 49%;
+  width: 18%;
+  height: 20px;
   display: inline-block;
   text-align: center;
 }
 
 #product_rate {
-  width: 49%;
+  width: 79%;
+  height: 20px;
   display: inline-block;
+  text-align: right;
 }
 
 #edit_page {
-  
+  display: inherit;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  background-color: WHITE;
+  border-radius: 5px;
+  width: 220px;
+  height: 350px;
+  color: #3E882A;
+}
+
+#edit_form {
+  width: 200px;
+  height: 350px;
+  margin: auto;
+}
+
+#show_page {
+  display: inherit;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  color: #3E882A;
+  width: 600px;
+  height: 280px;
+  padding-bottom: 5px;
+  background-color: WHITE;
+}
+
+#left_side {
+  display: inline-block;
+  float: left;
+  text-align: center;
+  width: 300px;
+  height: 150px;
+}
+
+#right_side {
+  display: inline-block;
+  float: left;
+  width: 300px;
+  height: 150px;
+}
+
+#desciption_side {
+  display: inline-block;
+  width: 600px;
+  height: 125px;
+  overflow-y: scroll;
+}
+
+#show_avatar {
+  width: 90%;
+  height: 90%;
+  margin: 2.5%;
+}
+
+#show_button {
+  width: 33%;
+  border: none;
+  display: inline-block;
+  height: 20px;
+  border-radius: 5px;
+  background-color: #52A125;
+  margin-top: 2%;
+  margin-left: 10%;
+}
+
+#show_button a {
+  color: WHITE;
+}
+
+#show_button:hover {
+  background-color: #36681A;
+}
+
+#show_price {
+  height: 20px;
+  width: inherit;
+  display: block;
+  text-align: left;
+}
+
+#show_price p {
+  display: inline-block;
+}
+
+#show_rate {
+  @extend #product_rate;
+  width: inherit;
+  height: 20px;
+  display: block;
+}
+
+#show_rate_totalRates {
+  width: 49%;
+  height: inherit;
+  text-align: right;
+  display: inline-block;
+}
+
+#show_rate_stars {
+  width: 49%;
+  height: inherit;
+  text-align: left;
+  display: inline-block;
+}
+
+#show_title {
+  width: inherit;
+  height: 30px;
+  display: block;
+  text-align: left;
+}
+
+#show_title p {
+  font-size: 24px;
+}
+
+#show_rating {
+  text-align: center;
+  display: inline-block;
+  float: left;
+  height: 20px;
+  width: 45px;
+  margin-top: 5px;
+}
+
+#show_rating p {
+  font-size: 14px;
+  color: WHITE;
+}
+
+#show_rating_button {
+  border-radius: 5px;
+  height: inherit;
+  width: inherit;
+  border: none;
+  background-color: #52A125;
+  float: right;
+}
+
+#show_ratings {
+  border:1px solid WHITE;
+  background-color: #52A125;
+  width: inherit;
+  height: 120px;
+}
+
+#show_rating_header {
+  height: 20px;
+  width: inherit;
+  background-color: WHITE;
+}
+
+#show_ratings_rates {
+  height: 20px;
+  width: inherit;
+  border-bottom: 1px solid WHITE;
+  text-align: left;
+  background-color: inherit;
+}
+
+#buyingModal {
+  background-color: #52A125;
+  color: WHITE;
+}
+
+#save_rate {
+  float: left;
+}
+
+#ratingModal {
+  width: 300px;
+  margin: auto;
+  background-color: #52A125;
+  color: WHITE;
+}
+
+#rate_button {
+  background-color: inherit;
+  border: none;
+  width: 30px;
+  height: 19px;
+  float: right;
+}
+
+#rate_button a {
+  color: WHITE;
+}
+
+#rate_button a:hover {
+  color: BLACK;
 }

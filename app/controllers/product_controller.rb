@@ -2,13 +2,31 @@ class ProductController < ApplicationController
 
   def index
     @products = Product.all;
+    @admin = false;
+    if user_signed_in?
+      if current_user.admin
+        @admin = true;
+      end
+    end
   end
 
   def new
+    @admin = false;
+    if user_signed_in?
+      if current_user.admin
+        @admin = true;
+      end
+    end
   end
 
   def show
     @product = Product.find(params[:id]);
+    @admin = false;
+    if user_signed_in?
+      if current_user.admin
+        @admin = true;
+      end
+    end
   end
 
   def destroy
@@ -21,9 +39,11 @@ class ProductController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id]);
+    @admin = false;
     if user_signed_in?
       if current_user.admin
-        @product = Product.find(params[:id]);
+        @admin = true;
       end
     end
   end
@@ -47,6 +67,20 @@ class ProductController < ApplicationController
     else
       flash[:alert] = "Error adding new product!"
       render :new
+    end
+  end
+
+  def rate
+    if user_signed_in?
+      id = params[:id];
+      product = Product.find(id);
+      rate = params[:rate].to_i;
+      totalRates = product.totalRates;
+      totalRating = totalRates * product.rate;
+      totalRates = totalRates + 1;
+      rate = (rate + totalRating) / totalRates;
+      Product.update(product.id, rate: rate, totalRates: totalRates);
+      redirect_to product_path(product.id);
     end
   end
 

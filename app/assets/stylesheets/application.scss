@@ -1,0 +1,107 @@
+/*
+ *
+ *= require_tree .
+ *= require_self
+
+*/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#userLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  float: right;
+  display: inline-block;
+  margin-right: 39px;
+}
+
+#userSignIn {
+  width: 50px;
+  height: 22px;
+  display: inline-block;
+  float: right;
+  margin-right: 15px;
+  background-color: inherit;
+  margin-top: 15px;
+}
+
+#userSignIn a {
+  color: WHITE;
+}
+
+#userLogoDropdown {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 10px;
+  float: right;
+  width: 118px;
+  height: 88px;
+}
+
+#options {
+  width: 118px;
+  background-color: #52A125;
+  height: 44px;
+  display: none;
+  border: 1px solid WHITE;
+}
+
+#options a {
+  border-bottom: 1px solid WHITE;
+  width: 118px;
+  height: 22px;
+  display: block;
+  color: WHITE;
+  margin: auto;
+}
+
+#options a:hover {
+  background-color: #36681A;
+}
+
+#userLogoDropdown:hover #options {
+  display: inline-block;
+}
+
+#mainBody {
+  background-image: url('terracedfarm.jpg');
+  background-size: cover;
+}
+
+#upperHeaderArea {
+  background-color: #AAFF94;
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+#lowerHeaderArea {
+  background-color: #AAFF94;
+  height: 35px;
+  width: 100%;
+  position: inherit;
+  display: inherit;
+}
+
+#upperHeaderLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-top: -9px;
+  display: inline-block;
+  margin-left: 25px;
+}
+
+#riceHouseSign {
+  font-size: 25px;
+  font-family: Proxima Nova Soft, Helvetica Neue, sans-serif;
+  color: #FFFFFF;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.navbarItem {
+  color: #FFFFFF;
+  background-color: inherit;
+}

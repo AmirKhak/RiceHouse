@@ -1,3 +1,91 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="show_page">
+  <div id="left_side">
+    <%= image_tag(@product.avatar, id: "show_avatar") %>
+  </div>
+  <div id="right_side">
+    <%if @admin %>
+      <button id="show_button">
+        <%= link_to "Remove", product_path(@product.id), method: 'delete' %>
+      </button>
+      <button id="show_button">
+        <%= link_to "Edit Product", edit_product_path(@product.id) %>
+      </button>
+    <% end %>
+    <div id="show_title">
+      <p><%= @product.title %></p>
+    </div>
+    <div id="show_price">
+      <% if @product.price.nil? %>
+        <p>Free</p>
+      <% else %>
+        <p>Price: <%= @product.price %>£</p>
+      <% end %>
+    </div>
+    <div id="show_rate">
+      <div id="show_rate_stars">
+        <% if @product.totalRates.nil? %>
+          <p>No Rates Yet<p>
+        <% else %>
+          <% rate = (@product.rate).round; %>
+          <% (0..(rate - 1)).each do |i| %>
+            <span id ="stars" class="fa fa-star checked"></span>
+          <% end %>
+          <% (rate..4).each do |i| %>
+            <span id ="stars" class="fa fa-star"></span>
+          <% end %>
+        <% end %>
+      </div>
+      <div id="show_rate_totalRates">
+        <p>(<%= @product.totalRates %>)</p>
+      </div>
+    </div>
+    <% if user_signed_in? %>
+      <% user_rate = 0; %>
+      <div id="show_rating">
+        <button id="show_rating_button" data-toggle="modal" data-target="#rateModal">
+          <p>Rate</p>
+        </button>
 
+        <div class="modal" id="rateModal" role="dialog">
+          <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div id="ratingModal" class="modal-content">
+
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Rating The Product</h4>
+              </div>
+
+              <div class="modal-body">
+                <div id="i" value="1"></div>
+                <div id="show_ratings">
+                  <% (0 .. 5).each do |i| %>
+                    <div id="show_ratings_rates">
+                      <% (i .. 4).each do |j| %>
+                        <span class="fa fa-star checked"></span>
+                      <% end %>
+                      <% (1 .. i).each do |j| %>
+                        <span class="fa fa-star"></span>
+                      <% end %>
+                      <div id="rate_button">
+                        <a href="/product/rate/<%= @product.id %>/<%= (5 - i) %>">Rate</a>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    <% end %>
+  </div>
+  <div id="desciption_side">
+    <h2>Description:</h2>
+    <p><%= @product.description %></p>
+  </div>
 </div>

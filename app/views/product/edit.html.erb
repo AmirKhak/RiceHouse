@@ -1,9 +1,7 @@
-<% if user_signed_in? %>
-  <% if current_user.admin %>
-
-    <div id="edit_page">
-      <h1>Edit Product</h1>
-
+<% if @admin %>
+  <div id="edit_page">
+    <div id="edit_form">
+      <h3>Edit Product</h3>
       <%= form_with(model: @product, local: true) do |form| %>
         <p>
           <%= form.label :title %><br>
@@ -17,7 +15,7 @@
 
         <p>
           <%= form.label :price %><br>
-          <%= form.number_field :price %>
+          <%= form.number_field :price, min: 0 %>
         </p>
 
         <p>
@@ -28,9 +26,7 @@
         <p>
           <%= form.submit %>
         </p>
-
       <% end %>
     </div>
-
-  <% end %>
+  </div>
 <% end %>

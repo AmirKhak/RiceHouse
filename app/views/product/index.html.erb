@@ -7,7 +7,7 @@
   <% end %>
   <% @products.each do |product| %>
     <div id="product">
-      <%= image_tag(product.avatar, id: "product_avatar") %>
+      <%= image_tag(product.avatar.url, id: "product_avatar") %>
       <div id="product_price_rate">
         <div id="product_price">
           <% if product.price == 0 %>

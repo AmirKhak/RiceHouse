@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div id="show_page">
   <div id="left_side">
-    <%= image_tag(@product.avatar, id: "show_avatar") %>
+    <%= image_tag(@product.avatar.url, id: "show_avatar") %>
   </div>
   <div id="right_side">
     <%if @admin %>

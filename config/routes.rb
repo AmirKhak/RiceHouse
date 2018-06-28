@@ -17,6 +17,12 @@ Rails.application.routes.draw do
 
   get '/product/:id', to: 'product#destroy'
   get '/product', to: 'product#create'
-  get '/product/rate/:id/:rate', to: 'product#rate' 
+  get '/product/rate/:id/:rate', to: 'product#rate'
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :product
+    end
+  end
 
 end

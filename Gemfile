@@ -34,6 +34,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'jquery-rails'
 gem 'aws-sdk'
+gem "figaro"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
